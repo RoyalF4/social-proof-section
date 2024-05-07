@@ -35,7 +35,7 @@ const testimonials = [
 
 export default function App() {
   return (
-    <main>
+    <main className="main">
       <div className="heading">
         <h2 className="heading__text">
           10,000+ of our users love our products.

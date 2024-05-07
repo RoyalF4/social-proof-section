@@ -3,10 +3,12 @@ export default function Testimonial({ name, credential, message, img }) {
     <div className="testimonial">
       <div className="user">
         <img src={img} alt="user avatar" className="user__img" />
-        <span className="user__name">{name}</span>
-        <span className="user__credential">{credential}</span>
+        <div className="user__info">
+          <span className="name">{name}</span>
+          <span className="credential">{credential}</span>
+        </div>
       </div>
-      <p className="review">{message}</p>
+      <p className="review">{`" ${message} "`}</p>
     </div>
   );
 }
