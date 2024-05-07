@@ -35,37 +35,40 @@ const testimonials = [
 
 export default function App() {
   return (
-    <main className="main">
-      <div className="heading">
-        <h2 className="heading__text">
-          10,000+ of our users love our products.
-        </h2>
-        <p className="heading__subtext">
-          We only provide great products combined with excellent customer
-          service. See what our satisfied customers are saying about our
-          services.
-        </p>
-      </div>
-      <div className="ratings-container">
-        {ratings.map((rating) => (
-          <Rating
-            stars={rating.stars}
-            source={rating.source}
-            key={rating.source}
-          />
-        ))}
-      </div>
-      <div className="testimonials-container">
-        {testimonials.map((testimonial) => (
-          <Testimonial
-            key={testimonial.id}
-            name={testimonial.name}
-            credential={testimonial.credential}
-            message={testimonial.message}
-            img={testimonial.img}
-          />
-        ))}
-      </div>
-    </main>
+    <>
+      <h1 className="sr-only">Social Proof Section</h1>
+      <main className="main">
+        <div className="heading">
+          <h2 className="heading__text">
+            10,000+ of our users love our products.
+          </h2>
+          <p className="heading__subtext">
+            We only provide great products combined with excellent customer
+            service. See what our satisfied customers are saying about our
+            services.
+          </p>
+        </div>
+        <div className="ratings-container">
+          {ratings.map((rating) => (
+            <Rating
+              stars={rating.stars}
+              source={rating.source}
+              key={rating.source}
+            />
+          ))}
+        </div>
+        <div className="testimonials-container">
+          {testimonials.map((testimonial) => (
+            <Testimonial
+              key={testimonial.id}
+              name={testimonial.name}
+              credential={testimonial.credential}
+              message={testimonial.message}
+              img={testimonial.img}
+            />
+          ))}
+        </div>
+      </main>
+    </>
   );
 }
