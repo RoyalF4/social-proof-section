@@ -8,6 +8,7 @@ const ratings = [
 ];
 const testimonials = [
   {
+    id: 1,
     name: 'Colton Smith',
     credential: 'Verified Buyer',
     message:
@@ -15,6 +16,7 @@ const testimonials = [
     img: '/images/image-colton.jpg',
   },
   {
+    id: 2,
     name: 'Irene Roberts',
     credential: 'Verified Buyer',
     message:
@@ -22,6 +24,7 @@ const testimonials = [
     img: '/images/image-irene.jpg',
   },
   {
+    id: 3,
     name: 'Anne Wallace',
     credential: 'Verified Buyer',
     message:
@@ -43,8 +46,26 @@ export default function App() {
           services.
         </p>
       </div>
-      <div className="ratings"></div>
-      <div className="testimonials"></div>
+      <div className="ratings-container">
+        {ratings.map((rating) => (
+          <Rating
+            stars={rating.stars}
+            source={rating.source}
+            key={rating.source}
+          />
+        ))}
+      </div>
+      <div className="testimonials-container">
+        {testimonials.map((testimonial) => (
+          <Testimonial
+            key={testimonial.id}
+            name={testimonial.name}
+            credential={testimonial.credential}
+            message={testimonial.message}
+            img={testimonial.img}
+          />
+        ))}
+      </div>
     </main>
   );
 }
